@@ -1,7 +1,7 @@
-Clone repository
+## Clone repository
 
 ```bash
-https://github.com/camila-barona1/Implement_Memcached.git
+git clone https://github.com/camila-barona1/Implement_Memcached.git
 ```
 
 # Getting Started

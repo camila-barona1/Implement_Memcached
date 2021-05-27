@@ -4,7 +4,7 @@ Clone repository
 https://github.com/camila-barona1/Implement_Memcached.git
 ```
 
-## Getting Started
+# Getting Started
 
 First run the command
 
@@ -24,11 +24,14 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can see the implementacion of all the command in `pages/api/memcached.js`.
+You can see the implementacion of all commands in `pages/api/memcached.js`.
 
-## Requirements to start running the test
+# Requirements to start running the tests
 
--Have memcached installed
+- Have memcached installed
+
+### ssasas
+
 To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.

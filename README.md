@@ -55,8 +55,20 @@ value
 # or
 set key flags exptime bytes
 value
+
+#so you can start getting keys
 ```
 
-so you can start getting keys
+- Get the value that you create by pasing the key in the line 14 on the file `pages/api/memcached.js`.
+
+### Example
+
+```bash
+set animal 0 3600 3 #set the key [animal]
+cat #and pass it the value of cat
+#go to pages/api/memcached.js and pass the key to the variable [key_get]
+```
+
+Now you just save the file and refresh the page to see the key and value displayed
 
 - For more information of the commands this site is very helpful [memcached commands](https://www.tutorialspoint.com/memcached/memcached_add_data.htm)

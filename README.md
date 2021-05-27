@@ -45,11 +45,6 @@ Run the commands on the terminal
 then connet
 `telnet localhost 11211`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
 # NOTES
 
 - Make sure you first add or set a new value to a new or existing key by the syntax

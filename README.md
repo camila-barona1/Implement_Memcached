@@ -6,7 +6,7 @@ https://github.com/camila-barona1/Implement_Memcached.git
 
 # Getting Started
 
-First run the command
+First run the command on the folder where the project has been downloaded
 
 ```bash
 npm install

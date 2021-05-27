@@ -1,8 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log(data);
+  let value = data.value;
+  let key = data.key;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,58 +16,54 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h4 className={styles.title}>Challenge</h4>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Implement a Memcached server (TCP/IP socket) that complies with the
+          specified protocol.
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
+          <a href="#" className={styles.card}>
+            <h2>
+              {key} &rarr; {value}
+            </h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Representation of the{" "}
+              <b>
+                <em>key</em>
+              </b>{" "}
+              and the{" "}
+              <b>
+                <em>value</em>
+              </b>
             </p>
           </a>
         </div>
+        <p>
+          You can find the implementation of the commands in
+          <code className={styles.code}>pages/api/memcached.js</code>
+        </p>
+        <p>
+          Make sure you have already installed <b>memcached</b>, listening to
+          port <b>11211</b> in localhost and the connection type is{" "}
+          <b>telnet</b>
+        </p>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
-  )
+  );
+}
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch("http://localhost:3000/api/memcached");
+  const data = await res.json();
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      data,
+    },
+  };
 }

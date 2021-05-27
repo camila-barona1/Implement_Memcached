@@ -34,7 +34,7 @@ You can see the implementacion of all commands in `pages/api/memcached.js`.
 
 If you want to set up memcached on windows follow the next instructions [Install Memcached under Windows](https://www.programmersought.com/article/73161677171/).
 
-Then install PuTTY [PuTTY](https://www.putty.org/)
+Then install [PuTTY](https://www.putty.org/)
 
 Make the configuration so hostmame is set to **localhost**, port is set to **11211** and connection type is **Telnet**.
 

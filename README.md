@@ -36,15 +36,32 @@ If you want to set up memcached on windows follow the next instructions [Install
 
 Then install PuTTY [PuTTY](https://www.putty.org/)
 
-Make the configuration so hostmame is set to _localhost_, port is set to _11211_ and connection type is _Telnet_
+Make the configuration so hostmame is set to **localhost**, port is set to **11211** and connection type is **Telnet**.
+
+### Install Memcached on Ubuntu
+
+Run the commands on the terminal
+`sudo apt-get install memcache`
+then connet
+`telnet localhost 11211`
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-# Deploy on Vercel
+# NOTES
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Make sure you first add or set a new value to a new or existing key by the syntax
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+add key flags exptime bytes
+value
+# or
+set key flags exptime bytes
+value
+```
+
+so you can start getting keys
+
+- For more information of the commands this site is very helpful [memcached commands](https://www.tutorialspoint.com/memcached/memcached_add_data.htm)

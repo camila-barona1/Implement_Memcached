@@ -30,9 +30,13 @@ You can see the implementacion of all commands in `pages/api/memcached.js`.
 
 - Have memcached installed
 
-### ssasas
+### Install Memcached on Windows
 
-To learn more about Next.js, take a look at the following resources:
+If you want to set up memcached on windows follow the next instructions [Install Memcached under Windows](https://www.programmersought.com/article/73161677171/).
+
+Then install PuTTY [PuTTY](https://www.putty.org/)
+
+Make the configuration so hostmame is set to _localhost_, port is set to _11211_ and connection type is _Telnet_
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.

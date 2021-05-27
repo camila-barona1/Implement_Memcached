@@ -9,7 +9,7 @@ git clone https://github.com/camila-barona1/Implement_Memcached.git
 First run the command on the folder where the project has been downloaded
 
 ```bash
-npm install
+npm install #make sure you have node js installed
 ```
 
 to install all the dependencias from the package.json

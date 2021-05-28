@@ -102,6 +102,11 @@ export default function Home({ data }) {
           <b>Get</b> the <b>key</b> that you just create
         </small>
         <br />
+        <p>
+          Make sure you have already installed <b>memcached</b>, listening to
+          port <b>11211</b> in localhost and the connection type is{" "}
+          <b>telnet</b>
+        </p>
         <form
           onSubmit={addKeyValue}
           style={{
@@ -155,11 +160,6 @@ export default function Home({ data }) {
         <p>
           You can find the implementation of the commands in
           <code className={styles.code}>pages/api/memcached.js</code>
-        </p>
-        <p>
-          Make sure you have already installed <b>memcached</b>, listening to
-          port <b>11211</b> in localhost and the connection type is{" "}
-          <b>telnet</b>
         </p>
       </main>
     </div>

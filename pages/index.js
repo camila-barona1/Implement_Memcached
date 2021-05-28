@@ -104,7 +104,12 @@ export default function Home({ data }) {
         <br />
         <form
           onSubmit={addKeyValue}
-          style={{ margin: "0.3rem", padding: "1px", textAlign: "center" }}
+          style={{
+            margin: "0.3rem",
+            padding: "1rem",
+            textAlign: "center",
+            border: "2px solid #ccc",
+          }}
         >
           <div style={{ paddingBottom: "10px" }}>
             <b>Try out the Storage Commands</b>
@@ -135,14 +140,16 @@ export default function Home({ data }) {
             <option value="5">Prepend</option>
             <option value="6">Cas</option>
           </select>
+          <div></div>
+          <br />{" "}
           <div>
-            <small>
-              If you want to see the changes please make sure to <b>search</b>{" "}
-              for the
-              <b> key again</b>
-            </small>
+            <button type="submit">Submit</button>
           </div>
-          <br /> <button type="submit">Submit</button>
+          <small>
+            If you want to see the changes please make sure to <b>search</b> for
+            the
+            <b> key again</b>
+          </small>
         </form>
 
         <p>

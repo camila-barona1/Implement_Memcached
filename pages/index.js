@@ -12,9 +12,8 @@ export default function Home({ data }) {
   const temp_key =
     typeof window !== "undefined" ? localStorage.getItem("temp_key") : null;
 
-  const setKey = async (event) => {
+  const getKey = async (event) => {
     // event.preventDefault();
-
     const res = await fetch("/api/memcached", {
       body: JSON.stringify({
         name: event.target.name.value,
@@ -26,7 +25,6 @@ export default function Home({ data }) {
     });
 
     const result = await res.json();
-    // result.user => 'Ada Lovelace'
     console.log(result);
     if (result.value === "data" || result.key === "none") {
       alert("Key no created");
@@ -34,6 +32,25 @@ export default function Home({ data }) {
 
     localStorage.setItem("temp_value", result.value);
     localStorage.setItem("temp_key", result.key);
+    location.reload();
+  };
+
+  const addKeyValue = async (event) => {
+    // event.preventDefault();
+    const res = await fetch("/api/memcached", {
+      body: JSON.stringify({
+        key: event.target.key.value,
+        value: event.target.value.value,
+        comamnds: event.target.comamnds.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const result = await res.json();
+    // console.log(result);
   };
 
   return (
@@ -69,7 +86,7 @@ export default function Home({ data }) {
             </p>
           </a>
         </div>
-        <form onSubmit={setKey}>
+        <form onSubmit={getKey}>
           <label htmlFor="name">Key </label>
           <input
             id="name"
@@ -85,6 +102,49 @@ export default function Home({ data }) {
           <b>Get</b> the <b>key</b> that you just create
         </small>
         <br />
+        <form
+          onSubmit={addKeyValue}
+          style={{ margin: "0.3rem", padding: "1px", textAlign: "center" }}
+        >
+          <div>
+            <b>Try out the Storage commands</b>
+          </div>
+          <label htmlFor="key">Key </label>
+          <input id="key" name="key" type="text" autoComplete="key" required />
+          <label htmlFor="value"> Value </label>
+          <input
+            id="value"
+            name="value"
+            type="text"
+            autoComplete="value"
+            required
+          />
+          <br />
+          <label style={{ color: "red", fontWeight: "bold" }} htmlFor="comamnd">
+            Choose a command:
+          </label>
+          &nbsp;
+          <select name="comamnds" id="comamnds" required>
+            <option value="">Select command:</option>
+            <option value="1" required>
+              Add
+            </option>
+            <option value="2">Set</option>
+            <option value="3">Replace</option>
+            <option value="4">Append</option>
+            <option value="5">Prepend</option>
+            <option value="6">Cas</option>
+          </select>
+          <div>
+            <small>
+              If you want to see the changes please make sure to <b>search</b>{" "}
+              for the
+              <b> key again</b>
+            </small>
+          </div>
+          <br /> <button type="submit">Submit</button>
+        </form>
+
         <p>
           You can find the implementation of the commands in
           <code className={styles.code}>pages/api/memcached.js</code>

@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-let Memcached = require("memcached");
-let memcached = new Memcached(`localhost:${process.env.PORT}`);
+import memcached from "./conn";
 
 let key;
 let value;
@@ -11,19 +10,16 @@ export default (req, res) => {
   Retrieval commands 
   *********************/
   //get
-  let key_get = ""; //change to trigger the get command (this one MUST already be created)
-  if (key_get) {
-    memcached.get(key_get, function (error, data) {
-      if (error || !data) {
-        console.log("error getting");
-        return;
-      }
+  let key_get = req.body.name; //change to trigger the get command (this one MUST already be created)
+  memcached.get(key_get, function (error, data) {
+    if (error || !data) {
+      console.log("error getting");
+      res.status(200).json({ value: "data", key: "none" });
+    } else {
       console.log(`name: ${data}`);
       res.status(200).json({ value: data, key: key_get });
-    });
-  } else {
-    res.status(200).json({ value: "data", key: "none" });
-  }
+    }
+  });
   /*******************/
 
   //gets

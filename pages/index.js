@@ -76,6 +76,11 @@ export default function Home({ data }) {
           />
           <button type="submit">Search</button>
         </form>
+        <small>
+          {" "}
+          <b>Get</b> the <b>key</b> that you just create
+        </small>
+        <br />
         <p>
           You can find the implementation of the commands in
           <code className={styles.code}>pages/api/memcached.js</code>

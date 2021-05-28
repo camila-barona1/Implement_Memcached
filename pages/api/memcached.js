@@ -11,15 +11,20 @@ export default (req, res) => {
   *********************/
   //get
   let key_get = req.body.name; //change to trigger the get command (this one MUST already be created)
-  memcached.get(key_get, function (error, data) {
-    if (error || !data) {
-      console.log("error getting");
-      res.status(200).json({ value: "data", key: "none" });
-    } else {
-      console.log(`name: ${data}`);
-      res.status(200).json({ value: data, key: key_get });
-    }
-  });
+  if (key_get) {
+    memcached.get(key_get, function (error, data) {
+      if (error || !data) {
+        console.log("error getting");
+        res.status(200).json({ value: "data", key: "none" });
+      } else {
+        console.log(`name: ${data}`);
+        res.status(200).json({ value: data, key: key_get });
+      }
+    });
+  } else {
+    res.status(200).json({ value: "data", key: "none" });
+  }
+
   /*******************/
 
   //gets

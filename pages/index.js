@@ -106,8 +106,8 @@ export default function Home({ data }) {
           onSubmit={addKeyValue}
           style={{ margin: "0.3rem", padding: "1px", textAlign: "center" }}
         >
-          <div>
-            <b>Try out the Storage commands</b>
+          <div style={{ paddingBottom: "10px" }}>
+            <b>Try out the Storage Commands</b>
           </div>
           <label htmlFor="key">Key </label>
           <input id="key" name="key" type="text" autoComplete="key" required />

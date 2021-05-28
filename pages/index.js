@@ -27,7 +27,11 @@ export default function Home({ data }) {
 
     const result = await res.json();
     // result.user => 'Ada Lovelace'
-    console.log(result.value);
+    console.log(result);
+    if (result.value === "data" || result.key === "none") {
+      alert("Key no created");
+    }
+
     localStorage.setItem("temp_value", result.value);
     localStorage.setItem("temp_key", result.key);
   };

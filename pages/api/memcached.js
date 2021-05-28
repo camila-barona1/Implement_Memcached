@@ -15,6 +15,7 @@ export default (req, res) => {
     if (error || !data) {
       console.log("error getting");
       res.status(200).json({ value: "data", key: "none" });
+      // alert("Key no created");
     } else {
       console.log(`name: ${data}`);
       res.status(200).json({ value: data, key: key_get });

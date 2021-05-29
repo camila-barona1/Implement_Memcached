@@ -4,6 +4,10 @@
 git clone https://github.com/camila-barona1/Implement_Memcached.git
 ```
 
+<div>
+<img src="./public/Captura.png"/>
+</div>
+
 # Getting Started
 
 First run the command on the folder where the project has been downloaded

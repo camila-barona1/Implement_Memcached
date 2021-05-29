@@ -61,12 +61,9 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h4 className={styles.title}>Challenge</h4>
+        <h4 className={styles.title}>Nextjs + Memcached</h4>
 
-        <p className={styles.description}>
-          Implement a Memcached server (TCP/IP socket) that complies with the
-          specified protocol.
-        </p>
+        <p className={styles.description}>Next js with memcached</p>
 
         <div className={styles.grid}>
           <a href="#" className={styles.card}>
